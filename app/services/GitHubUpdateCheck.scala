@@ -3,7 +3,7 @@ package services
 import javax.inject._
 
 import scala.collection.JavaConverters._
-import scala.util.Try
+import scala.util.{ Failure, Success, Try }
 
 import org.kohsuke.github._
 
@@ -48,7 +48,10 @@ class GitHubUpdateCheck {
 
 object GitHubApi {
     lazy val api = Try {
-        val token = "988407d900f2161ca33f2766ca3e2cfd1698695e"
+        val token = "b22839f38321b0208a0a142df2b947493722601e"
         GitHub.connectUsingOAuth(token)
-    }.toOption
+    } match {
+        case Success(a) => Some(a)
+        case Failure(t) => println(t); None
+    }
 }
