@@ -5,8 +5,9 @@ import scala.util.matching.Regex
 case class VersionFilter(filter: Regex, allowPrerelease: Boolean)
 object VersionFilter {
     val anything = VersionFilter(""".*""".r, true)
-    val simpleNumbering = VersionFilter("""^[0-9]+\.[0-9]+$""".r, true)
-    val semanticVersioning = VersionFilter("""^([0-9]+)\.([0-9]+)\.([0-9]+)(?:(\-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-\-\.]+)?$""".r, true)
+    val simpleNumbering = VersionFilter("""^[0-9]+(\.[0-9]+)+$""".r, true)
+    val semanticVersioningNoPostfix = VersionFilter("""^v?([0-9]+)\.([0-9]+)\.([0-9]+)""".r, true)
+    val semanticVersioning = VersionFilter("""^v?([0-9]+)\.([0-9]+)\.([0-9]+)(?:(\-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-\-\.]+)?$""".r, true)
 }
 
 sealed trait PackageType
@@ -22,9 +23,12 @@ object Packages {
     import VersionFilter._
 
     val all = List(
+        GitHubPackage("typesafehub", "activator", Some(semanticVersioning), GitHubTag),
         GitHubPackage("atom", "atom", Some(semanticVersioning.copy(allowPrerelease = false))),
         GitHubPackage("i3", "i3", Some(simpleNumbering), GitHubTag),
         GitHubPackage("JetBrains", "kotlin", Some(semanticVersioning)),
-        GitHubPackage("reorx", "httpstat", Some(semanticVersioning), GitHubTag)
+        GitHubPackage("reorx", "httpstat", Some(simpleNumbering), GitHubTag),
+        GitHubPackage("sbt", "sbt", Some(semanticVersioningNoPostfix), GitHubTag),
+        GitHubPackage("scala", "scala", Some(semanticVersioningNoPostfix), GitHubTag)
     )
 }
