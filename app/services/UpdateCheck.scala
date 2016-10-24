@@ -8,10 +8,12 @@ case class CheckResult(p: PackageType, latestVersion: String)
 
 @Singleton
 class UpdateCheck @Inject() (github: GitHubUpdateCheck) {
-    def checkAll() = {
+    def checkAll(ghToken: String) = {
+        val api = GitHubApi.api(ghToken)
+
         Packages.all.flatMap(p => {
             p match {
-                case p @ GitHubPackage(_, _, _, _) => github.check(p)
+                case p @ GitHubPackage(_, _, _, _) => github.check(p, api)
             }
         })
     }

@@ -11,9 +11,11 @@ import packages._
 
 @Singleton
 class GitHubUpdateCheck {
-    def check(p: GitHubPackage) = {
+    def check(p: GitHubPackage, api: Option[GitHub]) = {
+
+
         def checkRelease(p: GitHubPackage): Option[CheckResult] = {
-            GitHubApi.api.flatMap(
+            api.flatMap(
                 _.getRepository(s"${p.owner}/${p.repo}")
                 .listReleases.withPageSize(30)
                 .asScala
@@ -27,7 +29,7 @@ class GitHubUpdateCheck {
         }
 
         def checkTag(p: GitHubPackage): Option[CheckResult] = {
-            GitHubApi.api.flatMap(
+            api.flatMap(
                 _.getRepository(s"${p.owner}/${p.repo}")
                 .listTags.withPageSize(30)
                 .asScala
@@ -47,8 +49,7 @@ class GitHubUpdateCheck {
 }
 
 object GitHubApi {
-    lazy val api = Try {
-        val token = "b22839f38321b0208a0a142df2b947493722601e"
+    def api(token: String) = Try {
         GitHub.connectUsingOAuth(token)
     } match {
         case Success(a) => Some(a)

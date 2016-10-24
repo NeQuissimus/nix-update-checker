@@ -19,8 +19,8 @@ class HomeController @Inject() (c: UpdateCheck) extends Controller {
    * will be called when the application receives a `GET` request with
    * a path of `/`.
    */
-  def index = Action {
-    Ok(views.html.index(c.checkAll))
+  def index(token: String) = Action {
+    Ok(views.html.index(c.checkAll(token)))
   }
 
 }
