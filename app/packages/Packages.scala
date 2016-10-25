@@ -26,6 +26,7 @@ object Packages {
         GitHubPackage("typesafehub", "activator", Some(semanticVersioning), GitHubTag),
         GitHubPackage("atom", "atom", Some(semanticVersioning.copy(allowPrerelease = false))),
         GitHubPackage("i3", "i3", Some(simpleNumbering), GitHubTag),
+        GitHubPackage("hishamhm", "htop", Some(simpleNumbering), GitHubTag),
         GitHubPackage("JetBrains", "kotlin", Some(semanticVersioning)),
         GitHubPackage("reorx", "httpstat", Some(simpleNumbering), GitHubTag),
         GitHubPackage("sbt", "sbt", Some(semanticVersioningNoPostfix), GitHubTag),
