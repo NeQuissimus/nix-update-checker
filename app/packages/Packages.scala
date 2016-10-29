@@ -28,6 +28,7 @@ object Packages {
         GitHubPackage("i3", "i3", Some(simpleNumbering), GitHubTag),
         GitHubPackage("hishamhm", "htop", Some(simpleNumbering), GitHubTag),
         GitHubPackage("JetBrains", "kotlin", Some(semanticVersioning)),
+        GitHubPackage("lihaoyi", "Ammonite", Some(simpleNumbering), GitHubTag),
         GitHubPackage("reorx", "httpstat", Some(simpleNumbering), GitHubTag),
         GitHubPackage("sbt", "sbt", Some(semanticVersioningNoPostfix), GitHubTag),
         GitHubPackage("scala", "scala", Some(semanticVersioningNoPostfix), GitHubTag),
