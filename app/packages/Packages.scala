@@ -5,6 +5,7 @@ import scala.util.matching.Regex
 case class VersionFilter(filter: Regex, allowPrerelease: Boolean)
 object VersionFilter {
     val anything = VersionFilter(""".*""".r, true)
+    def prefixedAnything(prefix: String) = VersionFilter(s"""${prefix}.*""".r, true)
     val simpleNumbering = VersionFilter("""^[0-9]+(\.[0-9]+)+$""".r, true)
     val semanticVersioningNoPostfix = VersionFilter("""^v?([0-9]+)\.([0-9]+)\.([0-9]+)""".r, true)
     val semanticVersioning = VersionFilter("""^v?([0-9]+)\.([0-9]+)\.([0-9]+)(?:(\-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-\-\.]+)?$""".r, true)
@@ -24,7 +25,7 @@ object Packages {
 
     val all = List(
         GitHubPackage("atom", "atom", Some(semanticVersioning.copy(allowPrerelease = false))),
-        GitHubPackage("curl", "curl", Some(anything), GitHubTag),
+        GitHubPackage("curl", "curl", Some(prefixedAnything("curl-")), GitHubTag),
         GitHubPackage("docker", "docker", Some(semanticVersioning), GitHubTag),
         GitHubPackage("i3", "i3", Some(simpleNumbering), GitHubTag),
         GitHubPackage("hishamhm", "htop", Some(simpleNumbering), GitHubTag),
