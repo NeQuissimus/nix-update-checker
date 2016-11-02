@@ -1,0 +1,12 @@
+@(results: Iterable[services.CheckResult])
+
+@main("Nix Update Checker by NeQuissimus") {
+
+<table style="width: 400px">
+<tr><td><u>Repo</u></td><td><u>Version</u></td></tr>
+@for(r <- results) {
+  <tr><td>@r.p</td><td>@r.latestVersion</td></tr>
+}
+</table>
+
+}

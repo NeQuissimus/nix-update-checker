@@ -1,12 +1,10 @@
-@(results: List[services.CheckResult])
-
 @main("Nix Update Checker by NeQuissimus") {
 
-<table style="width: 400px">
-<tr><td><u>Repo</u></td><td><u>Version</u></td></tr>
-@for(r <- results) {
-  <tr><td>@r.p</td><td>@r.latestVersion</td></tr>
-}
-</table>
+Enter GitHub access token
+
+<form onsubmit="return false;">
+  <input type="text" name="github" id="github" /><br />
+  <button onclick="javascript:window.location=(window.location + document.getElementById('github').value);">Check</button>
+</form>
 
 }

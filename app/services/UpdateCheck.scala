@@ -11,7 +11,7 @@ class UpdateCheck @Inject() (github: GitHubUpdateCheck) {
     def checkAll(ghToken: String) = {
         val api = GitHubApi.api(ghToken)
 
-        Packages.all.flatMap(p => {
+        Packages.all.par.flatMap(p => {
             p match {
                 case p @ GitHubPackage(_, _, _, _) => github.check(p, api)
             }

@@ -12,8 +12,6 @@ import packages._
 @Singleton
 class GitHubUpdateCheck {
     def check(p: GitHubPackage, api: Option[GitHub]) = {
-
-
         def checkRelease(p: GitHubPackage): Option[CheckResult] = {
             api.flatMap(
                 _.getRepository(s"${p.owner}/${p.repo}")

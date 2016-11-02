@@ -13,14 +13,12 @@ import services._
 @Singleton
 class HomeController @Inject() (c: UpdateCheck) extends Controller {
 
-  /**
-   * Create an Action to render an HTML page with a welcome message.
-   * The configuration in the `routes` file means that this method
-   * will be called when the application receives a `GET` request with
-   * a path of `/`.
-   */
-  def index(token: String) = Action {
-    Ok(views.html.index(c.checkAll(token)))
+  def index = Action {
+      Ok(views.html.index())
+  }
+
+  def list(token: String) = Action {
+    Ok(views.html.list(c.checkAll(token).seq))
   }
 
 }
