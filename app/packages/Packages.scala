@@ -25,6 +25,7 @@ object Packages {
 
     val all = List(
         GitHubPackage("atom", "atom", Some(semanticVersioning.copy(allowPrerelease = false))),
+        GitHubPackage("coreos", "rkt", Some(semanticVersioning.copy(allowPrerelease = false))),
         GitHubPackage("curl", "curl", Some(prefixedAnything("curl-")), GitHubTag),
         GitHubPackage("docker", "docker", Some(semanticVersioning), GitHubTag),
         GitHubPackage("i3", "i3", Some(simpleNumbering), GitHubTag),
@@ -34,6 +35,7 @@ object Packages {
         GitHubPackage("reorx", "httpstat", Some(simpleNumbering), GitHubTag),
         GitHubPackage("sbt", "sbt", Some(semanticVersioningNoPostfix), GitHubTag),
         GitHubPackage("scala", "scala", Some(semanticVersioningNoPostfix), GitHubTag),
-        GitHubPackage("typesafehub", "activator", Some(semanticVersioning), GitHubTag)
+        GitHubPackage("typesafehub", "activator", Some(semanticVersioning), GitHubTag),
+        GitHubPackage("zsh-users", "zsh", Some(prefixedAnything("zsh-")), GitHubTag)
     )
 }
