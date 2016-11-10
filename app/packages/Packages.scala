@@ -29,6 +29,7 @@ object Packages {
         GitHubPackage("curl", "curl", Some(prefixedAnything("curl-")), GitHubTag),
         GitHubPackage("docker", "docker", Some(semanticVersioning), GitHubTag),
         GitHubPackage("i3", "i3", Some(simpleNumbering), GitHubTag),
+        GitHubPackage("i3", "i3status", Some(simpleNumbering), GitHubTag),
         GitHubPackage("hishamhm", "htop", Some(simpleNumbering), GitHubTag),
         GitHubPackage("JetBrains", "kotlin", Some(semanticVersioning)),
         GitHubPackage("lihaoyi", "Ammonite", Some(simpleNumbering), GitHubTag),
@@ -36,6 +37,7 @@ object Packages {
         GitHubPackage("sbt", "sbt", Some(semanticVersioningNoPostfix), GitHubTag),
         GitHubPackage("scala", "scala", Some(semanticVersioningNoPostfix), GitHubTag),
         GitHubPackage("typesafehub", "activator", Some(semanticVersioning), GitHubTag),
+        GitHubPackage("xmonad", "xmonad", Some(semanticVersioning)),
         GitHubPackage("zsh-users", "zsh", Some(prefixedAnything("zsh-")), GitHubTag)
     )
 }
