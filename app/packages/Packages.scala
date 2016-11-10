@@ -37,7 +37,7 @@ object Packages {
         GitHubPackage("sbt", "sbt", Some(semanticVersioningNoPostfix), GitHubTag),
         GitHubPackage("scala", "scala", Some(semanticVersioningNoPostfix), GitHubTag),
         GitHubPackage("typesafehub", "activator", Some(semanticVersioning), GitHubTag),
-        GitHubPackage("xmonad", "xmonad", Some(semanticVersioning)),
+        GitHubPackage("xmonad", "xmonad", Some(semanticVersioning), GitHubTag),
         GitHubPackage("zsh-users", "zsh", Some(prefixedAnything("zsh-")), GitHubTag)
     )
 }
