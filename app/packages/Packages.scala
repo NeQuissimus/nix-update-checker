@@ -29,6 +29,7 @@ object Packages {
         GitHubPackage("coreutils", "coreutils", Some(simpleNumbering), GitHubTag),
         GitHubPackage("curl", "curl", Some(prefixedAnything("curl-")), GitHubTag),
         GitHubPackage("docker", "docker", Some(semanticVersioningNoPostfix), GitHubTag),
+        GitHubPackage("gradle", "gradle", Some(semanticVersioningNoPostfix), GitHubTag),
         GitHubPackage("i3", "i3", Some(simpleNumbering), GitHubTag),
         GitHubPackage("i3", "i3status", Some(simpleNumbering), GitHubTag),
         GitHubPackage("hishamhm", "htop", Some(simpleNumbering), GitHubTag),
