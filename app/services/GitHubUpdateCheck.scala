@@ -15,7 +15,7 @@ class GitHubUpdateCheck {
         def checkRelease(p: GitHubPackage): Option[CheckResult] = {
             api.flatMap(
                 _.getRepository(s"${p.owner}/${p.repo}")
-                .listReleases.withPageSize(30)
+                .listReleases.withPageSize(10)
                 .asScala
                 .filter(r => p.versionFilter.map(f => f.filter.pattern.matcher(r.getName).matches).getOrElse(false))
                 .filter(r => p.versionFilter.map(f => f.allowPrerelease).getOrElse(false) || !r.isPrerelease)
@@ -29,9 +29,10 @@ class GitHubUpdateCheck {
         def checkTag(p: GitHubPackage): Option[CheckResult] = {
             api.flatMap(
                 _.getRepository(s"${p.owner}/${p.repo}")
-                .listTags.withPageSize(30)
+                .listTags.withPageSize(10)
                 .asScala
                 .filter(r => p.versionFilter.map(f => f.filter.pattern.matcher(r.getName).matches).getOrElse(false))
+                // .map(x => {println(x.getName); x})
                 .take(1)
                 .toSeq
                 .headOption

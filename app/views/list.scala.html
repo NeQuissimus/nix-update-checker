@@ -5,7 +5,7 @@
 <table style="width: 400px">
 <tr><td><u>Repo</u></td><td><u>Version</u></td></tr>
 @for(r <- results) {
-  <tr><td>@r.p</td><td>@r.latestVersion</td></tr>
+  <tr><td><a href="@r.p.toWeb">@r.p</a></td><td>@r.latestVersion</td></tr>
 }
 </table>
 

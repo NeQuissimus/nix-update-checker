@@ -5,15 +5,18 @@ import scala.util.matching.Regex
 case class VersionFilter(filter: Regex, allowPrerelease: Boolean)
 object VersionFilter {
     val anything = VersionFilter(""".*""".r, true)
-    def prefixedAnything(prefix: String) = VersionFilter(s"""${prefix}.*""".r, true)
+    def prefixedAnything(prefix: String) = VersionFilter(s"""${prefix}.+""".r, true)
     val simpleNumbering = VersionFilter("""^[0-9]+(\.[0-9]+)+$""".r, true)
     val semanticVersioningNoPostfix = VersionFilter("""^v?([0-9]+)\.([0-9]+)\.([0-9]+)""".r, true)
     val semanticVersioning = VersionFilter("""^v?([0-9]+)\.([0-9]+)\.([0-9]+)(?:(\-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-\-\.]+)?$""".r, true)
 }
 
-sealed trait PackageType
+sealed trait PackageType {
+    def toWeb: String
+}
 case class GitHubPackage(owner: String, repo: String, versionFilter: Option[VersionFilter] = None, t: GitHubType = GitHubRelease) extends PackageType {
     override def toString = s"$owner/$repo"
+    override val toWeb = s"https://github.com/$owner/$repo"
 }
 
 sealed trait GitHubType
@@ -40,14 +43,14 @@ object Packages {
         GitHubPackage("mirror", "busybox", Some(anything), GitHubTag),
         GitHubPackage("mirror", "libX11", Some(prefixedAnything("libX11-")), GitHubTag),
         GitHubPackage("mirror", "wget", Some(semanticVersioning), GitHubTag),
-        GitHubPackage("openssl", "openssl", Some(prefixedAnything("OpenSSL_1_1_")), GitHubTag),
+        GitHubPackage("openssl", "openssl", Some(prefixedAnything("OpenSSL_1_1_0")), GitHubTag),
         GitHubPackage("openssl", "openssl", Some(prefixedAnything("OpenSSL_1_0_2")), GitHubTag),
         GitHubPackage("openssl", "openssl", Some(prefixedAnything("OpenSSL_1_0_1")), GitHubTag),
         GitHubPackage("reorx", "httpstat", Some(simpleNumbering), GitHubTag),
         GitHubPackage("sbt", "sbt", Some(semanticVersioningNoPostfix), GitHubTag),
         GitHubPackage("scala", "scala", Some(semanticVersioningNoPostfix), GitHubTag),
         GitHubPackage("typesafehub", "activator", Some(semanticVersioning), GitHubTag),
-        GitHubPackage("xmonad", "xmonad", Some(semanticVersioning), GitHubTag),
+        GitHubPackage("xmonad", "xmonad", Some(prefixedAnything("v0.1")), GitHubTag),
         GitHubPackage("zsh-users", "zsh", Some(prefixedAnything("zsh-")), GitHubTag)
     )
 }
