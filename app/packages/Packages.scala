@@ -36,6 +36,7 @@ object Packages {
         GitHubPackage("hishamhm", "htop", Some(simpleNumbering), GitHubTag),
         GitHubPackage("JetBrains", "kotlin", Some(semanticVersioning)),
         GitHubPackage("lihaoyi", "Ammonite", Some(simpleNumbering), GitHubTag),
+        GitHubPackage("liquibase", "liquibase", Some(semanticVersioning)),
         GitHubPackage("mirror", "busybox", Some(anything), GitHubTag),
         GitHubPackage("mirror", "libX11", Some(prefixedAnything("libX11-")), GitHubTag),
         GitHubPackage("mirror", "wget", Some(semanticVersioning), GitHubTag),
