@@ -29,7 +29,7 @@ object Packages {
     val all = List(
         GitHubPackage("atom", "atom", Some(semanticVersioning.copy(allowPrerelease = false))),
         GitHubPackage("coreos", "rkt", Some(semanticVersioning.copy(allowPrerelease = false))),
-        GitHubPackage("coreutils", "coreutils", Some(simpleNumbering), GitHubTag),
+        GitHubPackage("coreutils", "coreutils", Some(semanticVersioningNoPostfix), GitHubTag),
         GitHubPackage("curl", "curl", Some(prefixedAnything("curl-")), GitHubTag),
         GitHubPackage("docker", "docker", Some(semanticVersioningNoPostfix), GitHubTag),
         GitHubPackage("git", "git", Some(semanticVersioningNoPostfix), GitHubTag),
