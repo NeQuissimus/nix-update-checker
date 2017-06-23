@@ -38,6 +38,7 @@ object Packages {
         GitHubPackage("i3", "i3status", Some(simpleNumbering), GitHubTag),
         GitHubPackage("hishamhm", "htop", Some(simpleNumbering), GitHubTag),
         GitHubPackage("JetBrains", "kotlin", Some(semanticVersioning)),
+        GitHubPackage("copperhead", "linux-hardened", Some(anything)),
         GitHubPackage("kubernetes", "minikube", Some(semanticVersioning)),
         GitHubPackage("lihaoyi", "Ammonite", Some(simpleNumbering), GitHubTag),
         GitHubPackage("liquibase", "liquibase", Some(semanticVersioning)),
