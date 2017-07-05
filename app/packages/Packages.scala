@@ -42,7 +42,7 @@ object Packages {
         GitHubPackage("kubernetes", "kubernetes", Some(semanticVersioning)),
         GitHubPackage("kubernetes", "minikube", Some(semanticVersioning)),
         GitHubPackage("lihaoyi", "Ammonite", Some(simpleNumbering), GitHubTag),
-        GitHubPackage("linrunner", "TLP", Some(simpleNumbering)),
+        GitHubPackage("linrunner", "TLP", Some(simpleNumbering), GitHubTag),
         GitHubPackage("liquibase", "liquibase", Some(semanticVersioning)),
         GitHubPackage("mirror", "busybox", Some(anything), GitHubTag),
         GitHubPackage("mirror", "libX11", Some(prefixedAnything("libX11-")), GitHubTag),
