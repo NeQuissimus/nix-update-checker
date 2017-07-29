@@ -40,6 +40,7 @@ object Packages {
         GitHubPackage("JetBrains", "kotlin", Some(semanticVersioning)),
         GitHubPackage("kubernetes", "kubernetes", Some(semanticVersioning)),
         GitHubPackage("kubernetes", "minikube", Some(semanticVersioning)),
+        GitHubPackage("libexpat", "libexpat", Some(anything), GitHubTag),
         GitHubPackage("lihaoyi", "Ammonite", Some(simpleNumbering), GitHubTag),
         GitHubPackage("linrunner", "TLP", Some(simpleNumbering), GitHubTag),
         GitHubPackage("liquibase", "liquibase", Some(semanticVersioning)),
