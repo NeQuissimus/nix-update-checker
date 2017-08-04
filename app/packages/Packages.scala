@@ -45,7 +45,7 @@ object Packages {
         GitHubPackage("lihaoyi", "Ammonite", Some(simpleNumbering), GitHubTag),
         GitHubPackage("linrunner", "TLP", Some(simpleNumbering), GitHubTag),
         GitHubPackage("liquibase", "liquibase", Some(semanticVersioning)),
-        GitHubPackage("minipli", "linux-unofficial_grsec", Some(anything), GitHubTag),
+        GitHubPackage("minipli", "linux-unofficial_grsec", Some(prefixedAnything("v4.9")), GitHubTag),
         GitHubPackage("mirror", "busybox", Some(anything), GitHubTag),
         GitHubPackage("mirror", "libX11", Some(prefixedAnything("libX11-")), GitHubTag),
         GitHubPackage("mirror", "wget", Some(semanticVersioning), GitHubTag),
