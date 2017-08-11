@@ -24,7 +24,7 @@ case object GitHubRelease extends GitHubType
 case object GitHubTag extends GitHubType
 
 object Packages {
-    import VersionFilter._
+    import VersionFilter._ //
 
     val all = List(
         GitHubPackage("apache", "subversion", Some(prefixedAnything("1.8")), GitHubTag),
