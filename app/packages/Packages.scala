@@ -34,7 +34,7 @@ object Packages {
         GitHubPackage("copperhead", "linux-hardened", Some(anything), GitHubTag),
         GitHubPackage("coreutils", "coreutils", Some(anything), GitHubTag),
         GitHubPackage("curl", "curl", Some(prefixedAnything("curl-")), GitHubTag),
-        GitHubPackage("docker", "docker-ce", Some(anything.copy(allowPrerelease = false)), GitHubTag),
+        GitHubPackage("docker", "docker-ce", Some(anything.copy(allowPrerelease = false))),
         GitHubPackage("git", "git", Some(semanticVersioningNoPostfix), GitHubTag),
         GitHubPackage("gradle", "gradle", Some(semanticVersioningNoPostfix), GitHubTag),
         GitHubPackage("i3", "i3", Some(simpleNumbering), GitHubTag),
