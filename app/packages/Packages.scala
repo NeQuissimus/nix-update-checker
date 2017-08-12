@@ -28,7 +28,7 @@ object Packages {
 
     val all = List(
         GitHubPackage("apache", "subversion", Some(prefixedAnything("1.8")), GitHubTag),
-        GitHubPackage("apache" "subversion", Some(prefixedAnything("1.9")), GitHubTag),
+        GitHubPackage("apache", "subversion", Some(prefixedAnything("1.9")), GitHubTag),
         GitHubPackage("atom", "atom", Some(semanticVersioning.copy(allowPrerelease = false))),
         GitHubPackage("chrjguill", "i3lock-color", Some(anything), GitHubTag),
         GitHubPackage("copperhead", "linux-hardened", Some(anything), GitHubTag),
