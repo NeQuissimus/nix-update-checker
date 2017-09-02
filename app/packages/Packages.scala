@@ -56,6 +56,7 @@ object Packages {
         GitHubPackage("openssl", "openssl", Some(prefixedAnything("OpenSSL_1_0_1")), GitHubTag),
         GitHubPackage("reorx", "httpstat", Some(simpleNumbering), GitHubTag),
         GitHubPackage("rkt", "rkt", Some(semanticVersioning.copy(allowPrerelease = false))),
+        GitHubPackage("rsyslog", "rsyslog", Some(semanticVersioning.copy(allowPrerelease = false)), GitHubTag),
         GitHubPackage("sbt", "sbt", Some(semanticVersioningNoPostfix), GitHubTag),
         GitHubPackage("scala", "scala", Some(semanticVersioningNoPostfix), GitHubTag),
         GitHubPackage("typesafehub", "activator", Some(semanticVersioning), GitHubTag),
