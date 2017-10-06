@@ -41,6 +41,7 @@ object Packages {
         GitHubPackage("i3", "i3status", Some(simpleNumbering), GitHubTag),
         GitHubPackage("hishamhm", "htop", Some(simpleNumbering), GitHubTag),
         GitHubPackage("JetBrains", "kotlin", Some(semanticVersioning)),
+        GitHubPackage("keybase", "client", Some(semanticVersioning)),
         GitHubPackage("kubernetes", "kubernetes", Some(semanticVersioning)),
         GitHubPackage("kubernetes", "minikube", Some(semanticVersioning)),
         GitHubPackage("libexpat", "libexpat", Some(prefixedAnything("R_")), GitHubTag),
