@@ -60,7 +60,6 @@ object Packages {
         GitHubPackage("rsyslog", "rsyslog", Some(semanticVersioning.copy(allowPrerelease = false)), GitHubTag),
         GitHubPackage("sbt", "sbt", Some(semanticVersioningNoPostfix), GitHubTag),
         GitHubPackage("scala", "scala", Some(semanticVersioningNoPostfix), GitHubTag),
-        GitHubPackage("typesafehub", "activator", Some(semanticVersioning), GitHubTag),
         GitHubPackage("xmonad", "xmonad", Some(prefixedAnything("v0.1")), GitHubTag),
         GitHubPackage("zsh-users", "zsh", Some(prefixedAnything("zsh-")), GitHubTag)
     )
